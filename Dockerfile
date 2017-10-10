@@ -5,4 +5,5 @@ RUN apt-get update && apt-get install -y \
     autotools-dev \
     build-essential \
     libtool \
+    pkg-config \
     && rm -rf /var/lib/apt/lists/*
