@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import sys
 from subprocess import call
 
 def build_version(version_parts):
@@ -9,8 +10,11 @@ def run():
     with open('VERSION') as f:
         version = f.readlines()[0].strip();
 
-    call(['docker', 'pull', 'ubuntu:xenial'])
-    call(['docker', 'build', '-t', 'fuco1/build-base:' + version, '.'])
+    extra_args = sys.argv
+    extra_args.pop(0)
+
+    call(['docker', 'build'] + extra_args + ['-t', 'fuco1/build-base:' + version, '.'])
+
     version_parts = version.split('.')
     del version_parts[-1]
     while len(version_parts) > 0:
