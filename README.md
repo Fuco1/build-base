@@ -24,4 +24,6 @@ The build container should mount the sources as volumes and then be started with
 
 * https://github.com/Fuco1/tagsistant-build
 * https://github.com/Fuco1/twmn-build
+* https://github.com/Fuco1/tmux-build
 * https://github.com/Fuco1/zathura-build
+* https://github.com/Fuco1/xmobar-build
