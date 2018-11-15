@@ -2,6 +2,10 @@
 
 Base docker image used for other build images.
 
+The base images are based on various Ubuntu releases, currently we
+track `xenial` and `bionic`.  You can find the setup on the respective
+`release/` branches.
+
 # *-build conventions
 
 All the build repositories follow the following conventions.
