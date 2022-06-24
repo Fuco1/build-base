@@ -20,7 +20,11 @@ All the build repositories follow the following conventions.
 5. An optional script called `install` with permissions `0755` which is used to install the result of the built step on the host system if this is desirable (i.e. there is no runtime image).
 6. An optional script called `<application>` with permissions `0755` which is used to start the dockerized application from the runtime image.  Typically it will mount host configuration files as volumes inside the image, set up paths and similar.
 
-The build container should mount the sources as volumes and then be started with `docker run`.  To this end it is necessary to specify a `CMD` directive inside the `Dockerfile.build` recipe.  Usually the steps performed are stored inside `docker-build` which is copied into the image and then executed in the container.
+The build container should mount the sources as volumes and then be
+started with `docker run`.  To this end it is necessary to specify a
+`CMD` directive inside the `Dockerfile.build` recipe.  Usually the
+steps performed are stored inside `docker-build.sh` script which is
+copied into the image and then executed in the container.
 
 **Note**: The docker images are only an optional requirement.  If the repository being built uses some other isolation technique, such as `virtualenv`, `stack`, `npm`, `composer` etc. it might just be built on the host directly.
 
